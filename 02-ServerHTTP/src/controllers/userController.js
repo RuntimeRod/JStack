@@ -28,22 +28,14 @@ module.exports = {
   },
 
   createUser(request, response) {
-    let body = "";
-    request.on("data", (chunk) => {
-      body += chunk;
-    });
+    const { body } = request;
+    const lastUserID = users[users.length - 1].id;
+    const newUser = {
+      id: lastUserID + 1,
+      name: body.name,
+    };
 
-    request.on("end", () => {
-      body = JSON.parse(body);
-
-      const lastUserID = users[users.length - 1].id;
-      const newUser = {
-        id: lastUserID + 1,
-        name: body.name,
-      };
-
-      users.push(newUser);
-      response.send(200, newUser);
-    });
+    users.push(newUser);
+    response.send(200, newUser);
   },
 };

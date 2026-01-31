@@ -1,4 +1,4 @@
-exports.bodyParser = (request, callback) => {
+function bodyParser(request, callback) {
   let body = "";
 
   request.on("data", (chunk) => {
@@ -10,4 +10,6 @@ exports.bodyParser = (request, callback) => {
     request.body = body;
     callback();
   });
-};
+}
+
+module.exports = bodyParser;
