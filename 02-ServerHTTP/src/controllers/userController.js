@@ -38,4 +38,9 @@ module.exports = {
     users.push(newUser);
     response.send(200, newUser);
   },
+
+  updateUser(request, response) {
+    const { id } = request.params;
+    const { name } = request.body;
+  },
 };

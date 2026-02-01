@@ -12,8 +12,8 @@ module.exports = [
     handler: userController.createUser,
   },
   {
-    method: "GET",
+    method: "PUT",
     endpoint: "/users/:id",
-    handler: userController.getUserById,
+    handler: userController.updateUser,
   },
 ];
