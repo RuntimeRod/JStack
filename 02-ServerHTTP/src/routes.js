@@ -3,6 +3,11 @@ const userController = require("./controllers/userController");
 module.exports = [
   {
     method: "GET",
+    endpoint: "/",
+    handler: userController.helloWorld,
+  },
+  {
+    method: "GET",
     endpoint: "/users",
     handler: userController.listUsers,
   },

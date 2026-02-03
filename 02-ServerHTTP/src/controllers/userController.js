@@ -1,6 +1,9 @@
 let users = require("../mocks/users");
 
 module.exports = {
+  helloWorld(request, response) {
+    response.end("<h1> Hello World</h1>");
+  },
   listUsers(request, response) {
     const { order } = request.query;
 
@@ -68,7 +71,7 @@ module.exports = {
     let { id } = request.params;
     id = Number(id);
 
-    users = users.filter((user) => user.id !== id)
-    response.send(200, { Deleted: true});
+    users = users.filter((user) => user.id !== id);
+    response.send(200, { Deleted: true });
   },
 };
