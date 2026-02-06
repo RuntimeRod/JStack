@@ -10,7 +10,8 @@
     "start": "npx nodemon src/index.js"
   },
   "dependencies": {
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "uuidv4": "^6.2.13"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
