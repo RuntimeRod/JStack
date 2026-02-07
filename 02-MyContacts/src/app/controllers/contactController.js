@@ -1,3 +1,4 @@
+const { response } = require("express");
 const ContactsRepository = require("../repositories/ContactsRepository");
 class ContactController {
   index(request, response) {
@@ -6,8 +7,16 @@ class ContactController {
     response.json(contacts);
   }
 
-  show() {
+  async show() {
     //Listar um unico registro
+    const { id } = request.params;
+    const contact = await ContactsRepository.findById(id);
+
+    if (!contact) {
+      return response.status(404).json({ error: "User not found" });
+    }
+
+    response.json(contact);
   }
 
   store() {
