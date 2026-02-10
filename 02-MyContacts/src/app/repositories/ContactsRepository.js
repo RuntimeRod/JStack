@@ -12,8 +12,15 @@ const contacts = [
 
 class ContactsRepository {
   findAll() {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
       resolve(contacts);
+    });
+  }
+
+  delete(id) {
+    return new Promise((resolve) => {
+      contacts = contacts.filter((contact) => contact.id !== id);
+      resolve();
     });
   }
 }
