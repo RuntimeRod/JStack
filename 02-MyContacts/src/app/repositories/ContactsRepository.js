@@ -20,6 +20,7 @@ class ContactsRepository {
   findByEmail(email) {
     return new Promise((resolve) => {
       contacts.find((contact) => contact.email === email);
+      resolve();
     });
   }
 

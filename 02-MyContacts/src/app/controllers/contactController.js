@@ -38,8 +38,8 @@ class ContactController {
     response.json(contact)
   }
 
-  update() {
-    //Atualizar um registro
+  update(request, response) {
+    
   }
 
   async delete(request, response) {
