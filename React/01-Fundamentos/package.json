@@ -1,0 +1,15 @@
+{
+  "devDependencies": {
+    "@babel/cli": "^7.28.6",
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0"
+  },
+  "scripts": {
+    "build": "babel src -d build"
+  },
+  "dependencies": {
+    "@babel/preset-react": "^7.28.5",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
+  }
+}
