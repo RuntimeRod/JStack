@@ -1,10 +1,12 @@
 import React from "react";
 
-function Post({ title, content }) {
+function Post(props) {
   return (
     <article>
-      <h2>{title}</h2>
-      <p>{content}</p>
+      <h2>
+        {props.read ? <s>{props.title}</s> : props.title}{" "}
+        <button onClick={() => props.onRemove(props.id)}>Remover</button>
+      </h2>
     </article>
   );
 }
